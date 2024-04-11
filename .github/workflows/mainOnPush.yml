@@ -3,6 +3,8 @@
 
 name: Github Actions - mainOnPush
 
+runs-on: self-hosted
+
 # Controls when the workflow will run
 on:
   push:
