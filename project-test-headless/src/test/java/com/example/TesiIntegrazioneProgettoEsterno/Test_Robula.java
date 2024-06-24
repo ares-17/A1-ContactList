@@ -23,7 +23,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	  public void setUp() throws Exception {
 		
 		  // Init chromedriver
-		  //String chromeDriverPath = "/home/runner/work/HookTestRepo/HookTestRepo/chromedriver_v94_linux64/chromedriver";
+		  //String chromeDriverPath = "/home/runner/work/A1-ContactList/A1-ContactList/chromedriver_v94_linux64/chromedriver";
 		  //System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 		  WebDriverManager.chromedriver().setup();
 		  System.setProperty("webdriver.chrome.whitelistedIps", "");
@@ -38,7 +38,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
   @Test
   public void test_loc_Robula_release_1_1() throws Exception{
     driver.get("http://localhost:3001/");
-    Thread.sleep(5000);
+    Thread.sleep(3500);
     driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).click();
     driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).clear();
     driver.findElement(By.xpath("//input[@formcontrolname='firstName']")).sendKeys("Marco");
@@ -49,10 +49,10 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//input[@formcontrolname='email']")).clear();
     driver.findElement(By.xpath("//input[@formcontrolname='email']")).sendKeys("ciao@ciao.it");
     driver.findElement(By.xpath("//button[@type='submit']")).click();
-    driver.findElement(By.xpath("//button[@class='btn btn-warning']")).click();
-    driver.get("http://localhost:3001/");
-    Thread.sleep(5000);
+	Thread.sleep(3500);
     assertEquals("4",driver.findElement(By.xpath("//div[@class='number']")).getText());
+    driver.findElement(By.xpath("//button[@class='btn btn-warning']")).click();
+    Thread.sleep(3500);
     assertEquals("Marco",driver.findElement(By.xpath("//tr[4]/td[2]")).getText());
   }
 
