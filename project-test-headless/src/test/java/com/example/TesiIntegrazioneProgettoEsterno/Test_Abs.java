@@ -23,7 +23,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	  public void setUp() throws Exception {
 		
 		  // Init chromedriver
-		  //String chromeDriverPath = "/home/runner/work/HookTestRepo/HookTestRepo/chromedriver_v94_linux64/chromedriver";
+		  //String chromeDriverPath = "/home/runner/work/A1-ContactList/A1-ContactList/chromedriver_v94_linux64/chromedriver";
 		  //System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 		  WebDriverManager.chromedriver().setup();
 		  System.setProperty("webdriver.chrome.whitelistedIps", "");
@@ -49,10 +49,10 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/input[1]")).clear();
     driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/input[1]")).sendKeys("ciao@ciao.it");
     driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[1]/div[1]/div[1]/form[1]/button[1]")).click();
-    driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[1]/div[1]/div[2]/app-display-board[1]/div[1]/div[2]/button[1]")).click();
-    driver.get("http://localhost:3001/");
-    Thread.sleep(3500);
+	Thread.sleep(3500);
     assertEquals("4",driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[1]/div[1]/div[2]/app-display-board[1]/div[1]/div[1]")).getText());
+    driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[1]/div[1]/div[2]/app-display-board[1]/div[1]/div[2]/button[1]")).click();
+    Thread.sleep(3500);
     assertEquals("Marco",driver.findElement(By.xpath("//html[1]/body[1]/app-root[1]/div[2]/app-users[1]/div[1]/table[1]/tbody[1]/tr[4]/td[2]")).getText());
   }
 
